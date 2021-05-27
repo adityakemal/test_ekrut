@@ -5,7 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import ProfileForm from './components/ProfileForm';
-
+console.log = ()=>{}
 function App() {
   return(
     <Router>
