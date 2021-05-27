@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.scss';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import ProfileForm from './components/ProfileForm';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return(
+    <Router>
+      <Switch>
+        <Route exact path='/' component={ProfileForm} />
+        <Route exact path='/:id' component={ProfileForm} />
+        <Route exact path='*' component={()=> <div className='fof'><h2><b>404</b>  | Page not found..</h2></div>} />
+      </Switch>
+    </Router>
+  )
 }
 
 export default App;
